@@ -1,0 +1,33 @@
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%{Yb}%w%=%m/%d %c"
+
+# # bind F7  to detach screen session from this terminal
+# # bind F8  to kill current screen window.
+# # bind F9  to create a new screen
+# # bind F10 to rename current screen window
+# # bind F11 to move to previous window
+# # bind F12 to move to next window
+ bindkey -k k7 detach
+ bindkey -k k8 kill
+ bindkey -k k9 screen
+ bindkey -k k; title
+ bindkey -k F1 prev
+ bindkey -k F2 next
+
+
+# I like a usefull caption showing system load and time..
+# caption always "window %3n (%t) %u%? | system load: %l | %D, %d %M %Y %C%a"
+# caption always "%{Yb} %D %Y-%02m-%02d %0c:%s %{k}|%{G} %l %{k}|%{W} %-w%{+u}%n %t%{-u}%+w"
+# caption always "%{Yb} %D %Y-%02m-%02d %c:%s %{G}|%{Y} %l %{G}|%{Y} %t %{G}|%{Y} %{R}%?%u%{Y}%w"
+
+# remap w to the selectable list
+ bind 'w' windowlist -b
+ bind 'W' windows
+# #This makes [ctrl[a] [w] pop up the full screen
+# #windowlist for you to arrow through by default.
+
+# # This will enable scrolling in a screen when using PuTTY.
+termcapinfo xterm*|rxvt* 'ti@:te@'
+
+shell bash --init-file /root/.profile
